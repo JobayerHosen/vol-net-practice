@@ -20,6 +20,10 @@ async function run() {
     const db = client.db("vol-net");
     const usersCollection = db.collection("users");
 
+    app.get("/", (req, res) => {
+      res.send("API in up...");
+    });
+
     app.post("/users/addUser", async (req, res) => {
       const doc = req.body;
 
